@@ -9,14 +9,25 @@
 
 struct Town {
     //let region = "South"
-    static let region = "South" 
-    var population: Int = 5422 {
-        didSet(oldPopulation) {
+    //static let region = "South"
+    let region: String
+   // var population: Int = 5422 {
+    var population: Int {
+    didSet(oldPopulation) {
             println("The population has changed to \(population) from \(oldPopulation).")
         }
     }
-    var numberOfStopLights = 4
+    //var numberOfStopLights = 4
+    var numberOfStopLights: Int
+    init(region: String, population: Int, stopLights: Int) {
+        self.region = region
+        self.population = population
+        numberOfStopLights = stopLights
+    }
     
+    init(population: Int, stopLights: Int) {
+        self.init(region: "N/A", population: population, stopLights: stopLights)
+    }
     enum Size: String {
         case Small = "Small"
         case Medium = "Medium"

@@ -12,9 +12,20 @@ class Zombie: Monster {
     }
 
 
-var walksWithLimp = false
-private var isFallingApart = false
-
+//var walksWithLimp = false
+    var walksWithLimp: Bool
+//private var isFallingApart = false
+    private var isFallingApart: Bool
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+        walksWithLimp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
+    }
+    
+    convenience init(limp: Bool, fallingApart: fallingApart, town: nil, monsterName: "")
+    if walksWithLimp {
+    println("This zombie has a bad knee.")
+    }
 override func terrorizeTown() {
     //town?.changePopulation(-10)
     if !isFallingApart {
