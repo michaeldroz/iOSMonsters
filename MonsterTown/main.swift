@@ -6,7 +6,20 @@
 //  Copyright (c) 2014 Michael Droz. All rights reserved.
 //
 
-import Foundation
+var myTown = Town()
+let ts = myTown.townSize
+println(ts.rawValue)
+myTown.changePopulation(500)
+let fredTheZombie = Zombie()
+fredTheZombie.town = myTown
+fredTheZombie.terrorizeTown()
+fredTheZombie.town?.printTownDescription()
+let z1 = Zombie()
+z1.walksWithLimp = false
+let z2 = z1
+z2.walksWithLimp = true
+println("z1 walks with limp? \(z1.walksWithLimp); z2 walks with limp? \(z2.walksWithLimp)")
 
-println("Hello, World!")
-
+println("Victim pool: \(fredTheZombie.victimPool)")
+fredTheZombie.victimPool = 500
+println("Victim pool: \(fredTheZombie.victimPool)")
